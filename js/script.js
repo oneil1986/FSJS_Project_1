@@ -13,31 +13,31 @@ project 1 - A Random Quote Generator
 
 const quotes = [
   {
-    quote: "",
+    quote: "1", //the actual quote
+    source: "", //the person or character who said it
+    citation: "", //the source of the quote, like the book, movie or song where the quote originates.
+    year: "" // When the quote was created.
+  },
+  {
+    quote: "2",
     source: "",
     citation: "",
     year: ""
   },
   {
-    quote: "",
+    quote: "3",
     source: "",
     citation: "",
     year: ""
   },
   {
-    quote: "",
+    quote: "4",
     source: "",
     citation: "",
     year: ""
   },
   {
-    quote: "",
-    source: "",
-    citation: "",
-    year: ""
-  },
-  {
-    quote: "",
+    quote: "5",
     source: "",
     citation: "",
     year: ""
@@ -46,8 +46,16 @@ const quotes = [
 
 /***
  * `getRandomQuote` function
+ * This function will generate a random quote
+ * from the quotes array of objects.
  ***/
-function getRandomQuote() {}
+
+function getRandomQuote() {
+  let randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
+}
+
+console.log(getRandomQuote());
 
 /***
  * `printQuote` function
