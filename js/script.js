@@ -70,7 +70,7 @@ function randomBackgroundColor() {
 
 /***
  * `printQuote` function
- * This function will print a random qutoe to the screen.
+ * This function will print a random quote to the screen.
  ***/
 function printQuote() {
   const div = document.getElementById("quote-box");
@@ -102,7 +102,7 @@ function printQuote() {
  * DO NOT CHANGE THE CODE BELOW!!
  ***/
 
-//  Every 5 seconds a new qutoe will display.
+//  Every 10 seconds a new qutoe will display.
 setInterval(printQuote, 10000);
 
 document
