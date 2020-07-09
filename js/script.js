@@ -15,7 +15,8 @@ const quotes = [
   {
     quote:
       "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.",
-    source: "Winston Churchill"
+    source: "Winston Churchill",
+    tag: "Inspirational"
   },
   {
     quote:
@@ -82,8 +83,14 @@ function printQuote() {
   }
 
   if (getQuotes.year) {
-    html += `<span class="year"> ${getQuotes.year}</span></p>`;
+    html += `<span class="year"> ${getQuotes.year}</span>`;
   }
+
+  if (getQuotes.tag) {
+    html += `<span class="tag">, ${getQuotes.tag}</span>`;
+  }
+
+  html += `</p>`;
 
   randomBackgroundColor();
 
@@ -96,7 +103,7 @@ function printQuote() {
  ***/
 
 //  Every 5 seconds a new qutoe will display.
-setInterval(printQuote, 5000);
+setInterval(printQuote, 10000);
 
 document
   .getElementById("load-quote")
