@@ -14,10 +14,8 @@ project 1 - A Random Quote Generator
 const quotes = [
   {
     quote:
-      "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.", //the actual quote
-    source: "Winston Churchill", //the person or character who said it
-    citation: "", //the source of the quote, like the book, movie or song where the quote originates.
-    year: "" // When the quote was created.
+      "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.",
+    source: "Winston Churchill"
   },
   {
     quote:
@@ -32,14 +30,12 @@ const quotes = [
     quote:
       "Security Is Mostly A Superstition. Life Is Either A Daring Adventure Or Nothing.",
     source: "Helen Keller",
-    citation: "Life Quote",
-    year: ""
+    citation: "Life Quote"
   },
   {
     quote:
       "The two most important days in your life are the day you are born and the day you find out why.",
     source: "Mark Twain",
-    citation: "",
     year: "2018"
   }
 ];
@@ -55,7 +51,21 @@ function getRandomQuote() {
   return quotes[randomNumber];
 }
 
-console.log(getRandomQuote());
+/***
+ *  `randomColor` function
+ * This function will generate a new background
+ * color every time a new quote appears
+ ***/
+function randomColor() {
+  let randomNumber = Math.floor(Math.random() * 255);
+  let red = randomNumber;
+  let green = randomNumber;
+  let blue = randomNumber;
+  return (rgb = `rgb(${red}, ${green}, ${blue})`);
+}
+function randomBackgroundColor() {
+  document.body.style.backgroundColor = randomColor();
+}
 
 /***
  * `printQuote` function
@@ -74,6 +84,8 @@ function printQuote() {
   if (getQuotes.year) {
     html += `<span class="year"> ${getQuotes.year}</span></p>`;
   }
+
+  randomBackgroundColor();
 
   return (div.innerHTML = html);
 }
