@@ -58,12 +58,12 @@ function getRandomQuote() {
  * color every time a new quote appears
  ***/
 function randomColor() {
-  let randomNumber = Math.floor(Math.random() * 255);
-  let red = randomNumber;
-  let green = randomNumber;
-  let blue = randomNumber;
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
   return (rgb = `rgb(${red}, ${green}, ${blue})`);
 }
+
 function randomBackgroundColor() {
   document.body.style.backgroundColor = randomColor();
 }
